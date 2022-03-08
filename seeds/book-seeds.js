@@ -2,32 +2,25 @@ const { Book } = require('../models');
 
 const bookData = [
     {
-        book_title: 'The Wish',
-        user_id: 1
+        book_title: 'The Wish'
     },
     {
-        book_title: 'Better Off Dead',
-        user_id: 1
+        book_title: 'Better Off Dead'
     },
     {
-        book_title: 'Where the Crawdads Sing',
-        user_id: 1
+        book_title: 'Where the Crawdads Sing'
     },
     {
-        book_title: 'The Love Hypothesis',
-        user_id: 1
+        book_title: 'The Love Hypothesis'
     },
     {
-        book_title: 'It Ends with Us',
-        user_id: 2
+        book_title: 'It Ends with Us'
     },
     {
-        book_title: 'Go Tell the Bees That I am Gone',
-        user_id: 2
+        book_title: 'Go Tell the Bees That I am Gone'
     },
     {
-        book_title: 'The Storyteller',
-        user_id: 3
+        book_title: 'The Storyteller'
     },
 ];
 
