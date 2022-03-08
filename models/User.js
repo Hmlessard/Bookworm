@@ -26,14 +26,6 @@ User.init(
             validate: {
                 len: [4]
             }
-        },
-        book_favs: {
-            type: DataTypes.STRING,
-            allowNull: true, // user does not have to enter book favs upon login/sign-in
-            references: {
-                model: 'book',
-                key: 'id',
-            }
         }
     },
     {

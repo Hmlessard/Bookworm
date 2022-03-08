@@ -3,6 +3,11 @@ const Post = require('./Post');
 const Comment = require('./Comment');
 const Book = require('./Book');
 
+User.hasMany(Book, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
 User.hasMany(Post, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
@@ -26,11 +31,6 @@ User.hasMany(Comment, {
 
 Post.hasMany(Comment, {
     foreignKey: 'post_id',
-    onDelete: 'CASCADE'
-});
-
-User.hasMany(Book, {
-    foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
 
