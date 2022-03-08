@@ -4,17 +4,17 @@ const userData = [
     {
         username: 'LindseyD',
         password: 'password',
-        book_favs: ''
+        book_favs: null
     },
     {
         username: 'HeatherL',
         password: 'password',
-        book_favs: ''
+        book_favs: null
     },
     {
         username: 'TonyL',
         password: 'password',
-        book_favs: ''
+        book_favs: null
     }
 ];
 
