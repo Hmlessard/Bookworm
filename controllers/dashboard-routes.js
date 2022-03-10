@@ -1,6 +1,3 @@
-// we'll need these for things like creating a posts from the dashboard, right
-//now I just copied and pasted from just-tech-news. making sure routes work first
-
 // const router = require('express').Router();
 // const sequelize = require('../config/connection');
 // const { Post, User, Comment, Vote } = require('../models');
