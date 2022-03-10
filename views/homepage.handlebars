@@ -1,6 +1,8 @@
+<!-- Display all posts -->
 <ol class="post-list">
   {{#each posts as |post|}}
   <li>
+    <!-- see partials/posts.handlebars -->
     {{> post-info post }}
   </li>
   {{/each}}
