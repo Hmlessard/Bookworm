@@ -5,7 +5,7 @@ const { User, Post, Comment, Book, BookUser } = require('../../models');
 router.get('/', (req, res) =>{
     //access our User model and run .findAll() method
     User.findAll({
-        attributes: {exclude: ['password']},
+        //attributes: {exclude: ['password']},
         // include: [
         //     {
         //         model: Book,
