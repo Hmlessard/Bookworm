@@ -1,11 +1,19 @@
 const router = require('express').Router();
-const { User, Post, Comment, Book } = require('../../models');
+const { User, Post, Comment, Book, BookUser } = require('../../models');
 
 //get /api/users
 router.get('/', (req, res) =>{
     //access our User model and run .findAll() method
     User.findAll({
-        //attributes: {exclude: ['password']}
+        attributes: {exclude: ['password']},
+        // include: [
+        //     {
+        //         model: Book,
+        //         attributes: ['id', 'book_title'],
+        //         through: BookUser,
+        //         as: 'books'
+        //     }
+        // ]
     })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
@@ -20,18 +28,19 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        //attributes: {exclude: ['password']},
+        attributes: {exclude: ['password']},
         include: [
             {
                 model: Post,
-                //attributes: ['id', 'title', 'post_url', 'created_at']
+                include: {
+                    model: Comment,
+                    attributes: ['id', 'comment_text', 'created_at']
+                }
             },
             {
-                model: Comment,
-                attributes: ['id', 'comment_text', 'created_at'],
-                include: {
-                    model: Post,
-                }
+                model: Book,
+                attributes: ['book_title'],
+                through: BookUser,
             }
         ]
 

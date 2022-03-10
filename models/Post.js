@@ -39,6 +39,14 @@ Post.init(
                 model: 'user',
                 key: 'id'
             }
+        },
+        book_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'book',
+                key: 'id'
+            }
         }
     },
     {

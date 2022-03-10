@@ -15,11 +15,11 @@ router.get('/', (req, res) => {
 //post (or create comment) /api/comments 
 router.post('/', (req, res) => {
     // wrapping the Sequelize queries in if (req.session) statments ensures that only logged-in users interact with the database
-    if (req.session) {
+    if (true) { //boolean will be req.session
         Comment.create({
             comment_text: req.body.comment_text,
             post_id: req.body.post_id,
-            user_id: req.session.user_id,
+            user_id: req.body.user_id//will be req.session.user_id,
         })
             .then(dbCommentData => res.json(dbCommentData))
             .catch(err => {

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Comment, Book } = require('../../models');
+const { User, Post, Comment, Book, BookUser } = require('../../models');
 
 //get /api/posts
 router.get('/', (req, res) => {
@@ -9,9 +9,10 @@ router.get('/', (req, res) => {
             'book_title',
             'book_author',
             'book_review',
+            'book_id',
             'created_at',
         ],
-        order: [['created_at', 'DESC']], // orders by the created_at column in descending order
+        order: [['book_title']], // orders by the created_at column in descending order
         include: [
             {
                 model: Comment,
@@ -45,6 +46,7 @@ router.get('/:id', (req, res) => {
             'book_title',
             'book_author',
             'book_review',
+            'book_id',
             'created_at',
         ],
         include: [
@@ -75,20 +77,27 @@ router.get('/:id', (req, res) => {
         });
 });
 
-//post (create a post) /api/posts
-router.post('/', (req, res) => {
+//post (create a post about a book that already exists in db)
+router.post('/:id', (req, res) => {
     // body expects {title: '', post_url: '', user_id: 1}
     Post.create({
         book_title: req.body.book_title,
         book_author: req.body.book_author,
         book_review: req.body.book_review,
-        user_id: req.session.user_id // grabs user id from the session instead of body
+        user_id: req.body.user_id,//will be req.session.user_id, // grabs user id from the session instead of body
+        book_id: req.params.id //grabs from url instead of body
     })
-        .then(dbPostData => { res.json(dbPostData) })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    .then(dbPostData => {
+        // BookUser.create({
+        //     book_id: dbPostData.id,
+        //     user_id: req.session.user_id
+        // })
+        res.json(dbPostData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 //put (update a post) /api/posts/1
