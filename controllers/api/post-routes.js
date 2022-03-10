@@ -35,7 +35,7 @@ router.get('/', (req, res) => {
         });
 })
 
-//get /api/posts/1
+//get post by id /api/posts/1
 router.get('/:id', (req, res) => {
     Post.findOne({
         where: {
@@ -69,7 +69,14 @@ router.get('/:id', (req, res) => {
                 res.status(404).json({ message: 'No post found with this id' });
                 return;
             }
-            res.json(dbPostData);
+            const post = dbPostData.get({ plain: true });
+            // console.log(post);
+            // res.json(dbPostData);
+
+            res.render('single-post', {
+                post,
+                loggedIn: req.session.loggedIn
+            });
         })
         .catch(err => {
             console.log(err);
@@ -125,6 +132,18 @@ router.put('/:id', (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
+});
+
+//from any single post, add a favorite to your list
+router.post('/addFav', (req, res) => {
+    BookUser.create(req.body)
+    .then(dbPostData => {
+        res.json(dbPostData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 //delete a post /api/posts/1
