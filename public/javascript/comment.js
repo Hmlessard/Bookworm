@@ -6,7 +6,8 @@ async function commentFormHandler(event) {
     const post_id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
-    const user_id = 3;
+    const user_id = 3//CHANGE THIS TO REQ.SESSION.USER_ID ONCE
+    //WE HAVE LOGIN ABILITY*************
   
     if (comment_text) {
       const response = await fetch('/api/comments', {
