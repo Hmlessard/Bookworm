@@ -1,23 +1,3 @@
-<section>
-  <h2>Create New Post</h2>
-
-  <form class="new-post-form">
-    <div>
-      <label for="book-title">Title:</label>
-      <input type="text" id="book-title" name="book-title"/>
-    </div>
-    <div>
-        <label for="book-author">Author:</label>
-        <input type="text" id="book-author" name="book-author"/>
-    </div>
-    <div>
-        <label for="book-review">Book Review:</label>
-        <input type="text" id="book-author" name="book-review"/>
-    </div>
-    <button type="submit" class="btn">Create Post</button>
-  </form>
-</section>
-
 {{#if posts.length}}
 <section>
   <h2>Your Reviews</h2>
@@ -31,5 +11,3 @@
   </ol>
 </section>
 {{/if}}
-
-<script src="/javascript/add-post.js"></script>

@@ -1,4 +1,4 @@
-async function newFormHandler(event) {
+  async function newFormHandler(event) {
     event.preventDefault();
   
     const bookApiEndpoint = window.location.toString().split('/')[
@@ -29,5 +29,5 @@ async function newFormHandler(event) {
     }
   }
   
-  //document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+  document.querySelector('.new-book-form').addEventListener('submit', newBookFormHandler);
   

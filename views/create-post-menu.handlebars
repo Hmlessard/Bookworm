@@ -1,0 +1,32 @@
+<form class="posttype-options">
+    <div>Select a book to post about</div>
+    <a href="/api/posts/newPost/0">Post about a new book</a>
+</form>
+
+<section>
+    <div>
+        <ol>
+        {{#each books}}
+        <li><a href="/api/posts/newPost/{{id}}">{{book_title}} by author?</a></li>
+        {{/each}}
+        </ol>
+    </div>
+    <div>
+        image/whatever we choose to put on the right side of the page
+    </div>
+</section>
+
+<section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/javascript/select-posttype.js"></script>
