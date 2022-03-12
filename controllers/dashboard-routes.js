@@ -1,21 +1,23 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment, Book } = require('../models');
+const { Post, User, Comment, Book, BookUser } = require('../models');
 // const withAuth = require('../utils/auth');
 
-// get all User's posts for dashboard
-router.get('/dashboard', (req, res) => {
+// get all User's posts for dashboard 
+// http://localhost:3001/dashboard
+router.get('/', (req, res) => {
     console.log(req.session);
     Post.findAll({
         where: {
-            user_id: req.session.user_id
+            user_id: 1 // req.session.user_id
         },
         attributes: [
             'id',
             'book_title',
             'book_author',
             'book_review',
-            'created_at'
+            'created_at',
+            'book_id'
         ],
         include: [
             {
@@ -25,11 +27,16 @@ router.get('/dashboard', (req, res) => {
                     model: User,
                     attributes: ['username']
                 }
-            }
+            },
+            // {
+            //     model: Book,
+            //     attributes: ['id', 'book_title'],
+            // }
         ]
     })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
+            console.log(posts)
             res.render('dashboard', { posts, loggedIn: true });
         })
         .catch(err => {

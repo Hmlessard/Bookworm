@@ -1,3 +1,9 @@
+<h2>Dashboard</h2>
+
+<!-- when clicked, user will be routed to the 'create new post page' -->
+<a href="/">Create New Post</a>
+
+<!-- View all user's posts -->
 {{#if posts.length}}
 <section>
   <h2>Your Reviews</h2>
@@ -5,7 +11,19 @@
     {{#each posts as |post|}}
     <li>
       {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+      <a href="/dashboard/edit/{{id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+
+<!-- List of user's books they want to read -->
+<section>
+  <h2>Books to Read</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{book.book_title}}
     </li>
     {{/each}}
   </ol>
