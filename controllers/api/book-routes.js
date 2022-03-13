@@ -35,27 +35,27 @@ router.get('/:id', (req, res) => {
             }
         ]
     })
-    .then(dbBookData => {
-        if (!dbBookData) {
-            res.status(404).json({ message: 'No book found with this id' });
-            return;
-        }
-        res.json(dbBookData);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    })
+        .then(dbBookData => {
+            if (!dbBookData) {
+                res.status(404).json({ message: 'No book found with this id' });
+                return;
+            }
+            res.json(dbBookData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
 });
 
 //post (create new book) /api/books
 router.post('/', (req, res) => {
     Book.create(req.body)
-    .then(dbBookData => res.json(dbBookData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    })
+        .then(dbBookData => res.json(dbBookData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
 });
 
 //put (update a book) /api/books/1
