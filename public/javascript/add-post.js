@@ -36,7 +36,8 @@ async function newPostFormHandler(event) {
     const response = await fetch('/api/books', {
         method: 'POST',
         body: JSON.stringify({
-          book_title: title
+          book_title: title,
+          book_author: author
         }),
         headers: {
           'Content-Type': 'application/json'
@@ -73,7 +74,32 @@ async function newPostFormHandler(event) {
           headers: {"Content-Type": "application/json"}
         }).json();
       })
-      .then(result => console.log(result));
+      .then(result => {
+        console.log(result.id);
+
+        const response = fetch('/api/posts', {
+          method: 'POST',
+          body: JSON.stringify({
+            book_title: title,
+            book_author: author,
+            book_review: review,
+            user_id: 3,//will be req.session.user_id, // grabs user id from the session instead of body
+            book_id: result.id
+          }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+
+        document.location.replace('/dashboard');
+
+        // if (response.ok) {
+        //   console.log('cool');
+        //   document.location.replace('/dashboard');
+        // } else {
+        //   alert(response.statusText);
+        // };
+      });
     }
   };
 };

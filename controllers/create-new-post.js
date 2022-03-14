@@ -3,20 +3,18 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment, Book } = require('../models');
 // const withAuth = require('../utils/auth');
 
-router.get('/CreateNewPost', (req, res) => { //will need withauth********
+router.get('/', (req, res) => { //will need withauth********
     Book.findAll({
       attributes: [
         'book_title',
+        'book_author',
+        'id'
       ],
     })
-    .then(bookData => {
-        const books = bookData.get({ plain: true });
-
-        res.render('create-post-menu', {
-          books,
-          loggedIn: true
-        });
-    })
+    .then(dbBookData => {
+      const books = dbBookData.map(book => book.get({ plain: true }));
+      res.render('create-post-menu', { books, loggedIn: true });
+  })
     .catch(err => {
       res.status(500).json(err);
     });

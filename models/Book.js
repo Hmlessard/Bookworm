@@ -17,6 +17,13 @@ Book.init(
             validate: {
                 len: [1]
             }
+        },
+        book_author: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
         }
     },
     {

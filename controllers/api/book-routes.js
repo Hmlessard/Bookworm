@@ -79,7 +79,8 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
     Book.update(
         {
-            book_title: req.body.book_title
+            book_title: req.body.book_title,
+            book_author: req.body.book_author
         },
         {
             where: {

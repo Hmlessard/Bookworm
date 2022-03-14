@@ -35,23 +35,6 @@ router.get('/', (req, res) => {
         });
 })
 
-//get api/posts/createNewPost
-router.get('/createNewPost', (req, res) => { //will need withauth********
-    Book.findAll({
-      attributes: [
-        'book_title',
-        'id'
-      ],
-    })
-    .then(dbBookData => {
-        const books = dbBookData.map(book => book.get({ plain: true }));
-        res.render('create-post-menu', { books, loggedIn: true });
-    })
-    .catch(err => {
-      res.status(500).json(err);
-    });
-});
-
 //get api/posts/newPost/:id
 router.get('/newPost/:id', (req, res) => { //will need withauth********
     if (req.params.id==0) {
@@ -64,7 +47,8 @@ router.get('/newPost/:id', (req, res) => { //will need withauth********
             id: req.params.id
           },
           attributes: [
-            'book_title'
+            'book_title',
+            'book_author'
           ],
         })
         .then(dbBookData => {
