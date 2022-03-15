@@ -4,15 +4,15 @@ const bookData = [
     {
         book_title: 'The Wish',
         book_author: 'Nicholas Sparks',
-        cover_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500191671l/61663._SY475_.jpg'
+        cover_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1633313310l/59139308._SX318_.jpg'
     },
     {
         book_title: 'Better Off Dead',
         book_author: 'Andrew and Lee Child',
-        cover_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500191671l/61663._SY475_.jpg'
+        cover_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1611469599l/56799265._SY475_.jpg'
     },
     {
-        book_title: 'Where the Crawdads Sing',
+        book_title: 'Where the Crawdads Sing',**********
         book_author: 'Delia Owens',
         cover_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500191671l/61663._SY475_.jpg'
     },

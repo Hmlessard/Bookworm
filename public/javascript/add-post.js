@@ -26,7 +26,6 @@ async function newPostFormHandler(event) {
         book_title: title,
         book_author: author,
         book_review: review,
-        user_id: 3,//will be req.session.user_id, // grabs user id from the session instead of body
         book_id: id
       }),
       headers: {
