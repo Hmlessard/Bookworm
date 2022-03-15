@@ -4,7 +4,7 @@
 
     {{#if existingBook}}
 
-     <div>
+    <div>
       <label for="book-title">Title:</label>
       <input type="text" id="book-title" name="book-title" value="{{book.book_title}}"readonly/>
     </div>
@@ -36,5 +36,9 @@
     <button type="submit" class="btn">Create Post</button>
     
 </form>
+
+{{#if existingBook}}
+<img src="{{book.cover_url}}" alt="book cover">
+{{/if}}
 
 <script src="/javascript/add-post.js"></script>

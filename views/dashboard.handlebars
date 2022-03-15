@@ -1,12 +1,16 @@
 <h2>Dashboard</h2>
 
 <!-- when clicked, user will be routed to the 'create new post page' -->
+<<<<<<< HEAD
 <a href="/createNewPost">Create New Post</a>
+=======
+<a href="/create-new-post">Create New Post</a>
+>>>>>>> f001328fabe74fb927fd84b1d0c430b809dc034b
 
 <!-- View all user's posts -->
-{{#if posts.length}}
 <section>
   <h2>Your Reviews</h2>
+  {{#if posts.length}}
   <ol>
     {{#each posts as |post|}}
     <li>
@@ -15,17 +19,31 @@
     </li>
     {{/each}}
   </ol>
+  {{else}}
+  <ol>
+    <li>
+      No reviews to display yet.
+    </li>
+  </ol>
 </section>
+{{/if}}
 
 <!-- List of user's books they want to read -->
 <section>
   <h2>Books to Read</h2>
+  {{#if books.length}}
   <ol>
     {{#each books as |book|}}
     <li>
       {{book_title}} by {{book_author}}
     </li>
     {{/each}}
+  </ol>
+  {{else}}
+  <ol>
+    <li>
+      No books to display yet.
+    </li>
   </ol>
 </section>
 {{/if}}

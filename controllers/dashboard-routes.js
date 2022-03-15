@@ -1,15 +1,16 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment, Book, BookUser } = require('../models');
-// const withAuth = require('../utils/auth');
+const checkForBooks = require('../utils/dashboard-helper');
+const withAuth = require('../utils/auth');
 
 // get all User's posts for dashboard and list of their "favorite books"
 // http://localhost:3001/dashboard
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     console.log(req.session);
     Post.findAll({
         where: {
-            user_id: 3 // req.session.user_id
+            user_id: req.session.user_id
         },
         attributes: [
             'id',
@@ -34,10 +35,14 @@ router.get('/', (req, res) => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
             console.log(posts)
 
-            const books = posts[0].user.books
+            const books = checkForBooks(posts)
             console.log(books)
 
-            res.render('dashboard', { posts, books, loggedIn: true });
+            res.render('dashboard', {
+                posts,
+                books,
+                loggedIn: true
+            });
         })
         .catch(err => {
             console.log(err);

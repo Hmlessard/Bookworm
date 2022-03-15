@@ -48,7 +48,8 @@ router.get('/newPost/:id', (req, res) => { //will need withauth********
           },
           attributes: [
             'book_title',
-            'book_author'
+            'book_author',
+            'cover_url'
           ],
         })
         .then(dbBookData => {

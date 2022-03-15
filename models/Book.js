@@ -1,3 +1,4 @@
+const { url } = require('inspector');
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection')
 
@@ -23,6 +24,13 @@ Book.init(
             allowNull: false,
             validate: {
                 len: [1]
+            }
+        },
+        cover_url: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            validate: {
+                isUrl: true
             }
         }
     },
