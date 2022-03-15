@@ -2,25 +2,40 @@ const { Book } = require('../models');
 
 const bookData = [
     {
-        book_title: 'The Wish'
+        book_title: 'The Wish',
+        book_author: 'Nicholas Sparks',
+        cover_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500191671l/61663._SY475_.jpg'
     },
     {
-        book_title: 'Better Off Dead'
+        book_title: 'Better Off Dead',
+        book_author: 'Andrew and Lee Child',
+        cover_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500191671l/61663._SY475_.jpg'
     },
     {
-        book_title: 'Where the Crawdads Sing'
+        book_title: 'Where the Crawdads Sing',
+        book_author: 'Delia Owens',
+        cover_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500191671l/61663._SY475_.jpg'
     },
     {
-        book_title: 'The Love Hypothesis'
+        book_title: 'The Love Hypothesis',
+        book_author: 'Ali Hazelwood',
+        cover_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500191671l/61663._SY475_.jpg'
     },
     {
-        book_title: 'It Ends with Us'
+        book_title: 'It Ends with Us',
+        book_author: 'Colleen Hoover',
+        cover_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500191671l/61663._SY475_.jpg'
     },
     {
-        book_title: 'Go Tell the Bees That I am Gone'
+        book_title: 'Go Tell the Bees That I am Gone',
+        book_author: 'Diana Gabaldon',
+        cover_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500191671l/61663._SY475_.jpg'
+
     },
     {
-        book_title: 'The Storyteller'
+        book_title: 'The Storyteller',
+        book_author: 'Jodi Picoult',
+        cover_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500191671l/61663._SY475_.jpg'
     },
 ];
 

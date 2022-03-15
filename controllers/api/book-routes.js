@@ -20,6 +20,23 @@ router.get('/', (req, res) => {
         });
 });
 
+//get/api/books/:title
+//this route is specifically for add-post to call and get book_id
+//of newly created book
+router.get('/:title', (req, res) => {
+    Book.findOne({
+        where: {
+            book_title: req.params.title
+        },
+        attributes: [
+            'id'
+        ]
+    }).then(dbBookData => {
+        res.json(dbBookData);
+    })
+})
+
+
 //get /api/books/1
 router.get('/:id', (req, res) => {
     Book.findOne({
@@ -62,7 +79,8 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
     Book.update(
         {
-            book_title: req.body.book_title
+            book_title: req.body.book_title,
+            book_author: req.body.book_author
         },
         {
             where: {

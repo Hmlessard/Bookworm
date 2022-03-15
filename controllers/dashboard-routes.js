@@ -26,7 +26,7 @@ router.get('/', withAuth, (req, res) => {
                 attributes: ['username'],
                 include: {
                     model: Book,
-                    attributes: ['id', 'book_title']
+                    attributes: ['id', 'book_title', 'book_author']
                 }
             }
         ]

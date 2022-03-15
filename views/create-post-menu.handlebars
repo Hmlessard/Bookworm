@@ -7,7 +7,7 @@
     <div class="column">
         <ol>
         {{#each books}}
-        <li><a href="/api/posts/newPost/{{id}}">{{book_title}} by author?</a></li>
+        <li><a href="/api/posts/newPost/{{id}}">{{book_title}} by {{book_author}}</a></li>
         {{/each}}
         </ol>
     </div>
@@ -15,18 +15,3 @@
         image/whatever we choose to put on the right side of the page
     </div>
 </section>
-
-<section></section>
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="/javascript/select-posttype.js"></script>
