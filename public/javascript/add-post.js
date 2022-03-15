@@ -1,7 +1,7 @@
-let spleet = function(string) {
+let spleet = function (string) {
   let spleetString = "";
   let stringArr = string.split();
-  for (i=0; i<stringArr.length; i++) {
+  for (i = 0; i < stringArr.length; i++) {
     spleetString += stringArr[i]
   }
   return spleetString
@@ -18,7 +18,7 @@ async function newPostFormHandler(event) {
     window.location.toString().split('/').length - 1
   ]);
 
-  if (id>0) {
+  if (id > 0) {
     //book already exists
     const response = await fetch('/api/posts', {
       method: 'POST',
@@ -67,52 +67,51 @@ async function newPostFormHandler(event) {
                 fetch(`/api/books/${title}`, {
                   method: 'GET',
                 })
-                .then(response => {
-                  const reader = response.body.getReader();
-        
-                  return new ReadableStream({
-                    start(controller) {
-                      function push() {
-                        reader.read().then( ({done, value}) => {
-                          if (done) {
-                            console.log('done', done);
-                            controller.close();
-                            return;
-                          }
-                          controller.enqueue(value);
-                          console.log(done, value);
-                          push();
-                        })
+                  .then(response => {
+                    const reader = response.body.getReader();
+
+                    return new ReadableStream({
+                      start(controller) {
+                        function push() {
+                          reader.read().then(({ done, value }) => {
+                            if (done) {
+                              console.log('done', done);
+                              controller.close();
+                              return;
+                            }
+                            controller.enqueue(value);
+                            console.log(done, value);
+                            push();
+                          })
+                        }
+
+                        push();
                       }
-                    
-                      push();
-                    }
+                    })
                   })
-                })
-                .then(stream => {
-                  return new Response(stream, {
-                    headers: {"Content-Type": "application/json"}
-                  }).json();
-                })
-                .then(result => {
-                  fetch('/api/posts', {
-                    method: 'POST',
-                    body: JSON.stringify({
-                      book_title: title,
-                      book_author: author,
-                      book_review: review,
-                      user_id: 3,//will be req.session.user_id, // grabs user id from the session instead of body
-                      book_id: result.id
-                    }),
-                    headers: {
-                      'Content-Type': 'application/json'
-                    }
+                  .then(stream => {
+                    return new Response(stream, {
+                      headers: { "Content-Type": "application/json" }
+                    }).json();
+                  })
+                  .then(result => {
+                    fetch('/api/posts', {
+                      method: 'POST',
+                      body: JSON.stringify({
+                        book_title: title,
+                        book_author: author,
+                        book_review: review,
+                        book_id: result.id
+                      }),
+                      headers: {
+                        'Content-Type': 'application/json'
+                      }
+                    });
+
+                    document.location.replace('/dashboard');
                   });
-                
-                  document.location.replace('/dashboard');
-                });
               }
-            }) 
+            })
         }
         else {
           alert(response.statusText)
