@@ -39,4 +39,24 @@ router.post('/', (req, res) => {
     });
 });
 
+router.delete('/', (req, res) => {
+    BookUser.destroy({
+        where: {
+            book_id: req.body.book_id,
+            user_id: req.session.user_id
+        }
+    })
+    .then(dbBookUserData => {
+        if (!dbBookUserData) {
+            res.status(404).json({ message: 'No bookuser found with this info!' });
+            return;
+          }
+        res.json(dbBookUserData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+})
+
 module.exports = router;
