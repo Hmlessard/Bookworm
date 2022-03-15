@@ -35,23 +35,6 @@ router.get('/', (req, res) => {
         });
 })
 
-//get api/posts/createNewPost
-router.get('/createNewPost', (req, res) => { //will need withauth********
-    Book.findAll({
-      attributes: [
-        'book_title',
-        'id'
-      ],
-    })
-    .then(dbBookData => {
-        const books = dbBookData.map(book => book.get({ plain: true }));
-        res.render('create-post-menu', { books, loggedIn: true });
-    })
-    .catch(err => {
-      res.status(500).json(err);
-    });
-});
-
 //get api/posts/newPost/:id
 router.get('/newPost/:id', (req, res) => { //will need withauth********
     if (req.params.id==0) {
@@ -64,7 +47,9 @@ router.get('/newPost/:id', (req, res) => { //will need withauth********
             id: req.params.id
           },
           attributes: [
-            'book_title'
+            'book_title',
+            'book_author',
+            'cover_url'
           ],
         })
         .then(dbBookData => {
@@ -129,21 +114,17 @@ router.get('/:id', (req, res) => {
         });
 });
 
-//post (create a post about a book that already exists in db)
-router.post('/:id', (req, res) => {
-    // body expects {title: '', post_url: '', user_id: 1}
+//post at api/posts
+router.post('/', (req, res) => {
+    // body expects {book_title:, and I think we should add author}
     Post.create({
         book_title: req.body.book_title,
         book_author: req.body.book_author,
         book_review: req.body.book_review,
         user_id: req.body.user_id,//will be req.session.user_id, // grabs user id from the session instead of body
-        book_id: req.params.id //grabs from url instead of body
+        book_id: req.body.book_id //maybe replace all of this with req.body if it works
     })
     .then(dbPostData => {
-        // BookUser.create({
-        //     book_id: dbPostData.id,
-        //     user_id: req.session.user_id
-        // })
         res.json(dbPostData);
     })
     .catch(err => {

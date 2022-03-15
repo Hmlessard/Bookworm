@@ -4,14 +4,14 @@
 
     {{#if existingBook}}
 
-     <div>
+    <div>
       <label for="book-title">Title:</label>
       <input type="text" id="book-title" name="book-title" value="{{book.book_title}}"readonly/>
     </div>
 
     <div>
         <label for="book-author">Author:</label>
-        <input type="text" id="book-author" name="book-author" value="author" readonly/>
+        <input type="text" id="book-author" name="book-author" value="{{book.book_author}}" readonly/>
     </div>
 
     {{else}}
@@ -30,9 +30,15 @@
 
     <div>
         <label for="book-review">Book Review:</label>
-        <input type="text" id="book-author" name="book-review"/>
+        <input type="text" id="book-review" name="book-review"/>
     </div>
 
     <button type="submit" class="btn">Create Post</button>
     
 </form>
+
+{{#if existingBook}}
+<img src="{{book.cover_url}}" alt="book cover">
+{{/if}}
+
+<script src="/javascript/add-post.js"></script>
