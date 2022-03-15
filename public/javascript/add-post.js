@@ -100,7 +100,6 @@ async function newPostFormHandler(event) {
                       book_title: title,
                       book_author: author,
                       book_review: review,
-                      user_id: req.session.user_id,
                       book_id: result.id
                     }),
                     headers: {
