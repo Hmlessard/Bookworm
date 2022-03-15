@@ -3,15 +3,15 @@
     <a href="/api/posts/newPost/0">Post about a new book</a>
 </form>
 
-<section>
-    <div>
+<section class="container">
+    <div class="column">
         <ol>
         {{#each books}}
         <li><a href="/api/posts/newPost/{{id}}">{{book_title}} by {{book_author}}</a></li>
         {{/each}}
         </ol>
     </div>
-    <div>
+    <div class="column">
         image/whatever we choose to put on the right side of the page
     </div>
 </section>
