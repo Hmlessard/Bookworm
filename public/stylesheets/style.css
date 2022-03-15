@@ -1,0 +1,47 @@
+* {
+    /* box-sizing: border-box; */
+    background-color: rgb(133, 103, 65);
+    padding: 20;
+    margin: 20;
+  }
+
+  body, html {
+    background-color: rgb(133, 103, 65);
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    color: rgb(0, 0, 0);
+  }
+  
+  a {
+    text-decoration: none;
+    color: rgb(116, 28, 28);
+    font-weight: bold;
+    }
+
+  a:hover {
+    color: rgb(116, 28, 28);
+  }
+
+  button .btn {
+    background-color: rgb(116, 28, 28);
+    border: 0;
+    padding: 1%;
+    color: white;
+    font-weight: bold;
+    transition: background-color .1s;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  button:hover {
+    background-color: rgb(189, 4, 4);
+  }
+  
+  
+  
+  textarea, input {
+    padding: .5%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
