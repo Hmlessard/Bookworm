@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment, Book, BookUser } = require('../models');
 const checkForBooks = require('../utils/dashboard-helper');
 const withAuth = require('../utils/auth');
+const isNotOnList = require('../utils/not-on-list')
 
 // get all User's posts for dashboard and list of their "favorite books"
 // http://localhost:3001/dashboard
@@ -50,45 +51,30 @@ router.get('/', withAuth, (req, res) => {
         });
 });
 
-// router.get('/edit/:id', withAuth, (req, res) => {
-//   Post.findByPk(req.params.id, {
-//     attributes: [
-//       'id',
-//       'post_url',
-//       'title',
-//       'created_at',
-//       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-//     ],
-//     include: [
-//       {
-//         model: Comment,
-//         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-//         include: {
-//           model: User,
-//           attributes: ['username']
-//         }
-//       },
-//       {
-//         model: User,
-//         attributes: ['username']
-//       }
-//     ]
-//   })
-//     .then(dbPostData => {
-//       if (dbPostData) {
-//         const post = dbPostData.get({ plain: true });
-
-//         res.render('edit-post', {
-//           post,
-//           loggedIn: true
-//         });
-//       } else {
-//         res.status(404).end();
-//       }
-//     })
-//     .catch(err => {
-//       res.status(500).json(err);
-//     });
-// });
+router.get('/toReadList', (req, res) => {
+    Book.findAll({
+        attributes: [
+            'book_title',
+            'book_author',
+            'id'
+        ],
+        include: [
+            {
+                model: User,
+                attributes: ['id'],
+                through: BookUser
+            }
+        ]
+    })
+    .then(dbBookData => {
+        const books = dbBookData.map(book => book.get({ plain: true }));
+        const booksToRender = isNotOnList(books, req.session.user_id)
+        res.render('books-to-read', {booksToRender, loggedIn:true});
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 module.exports = router;

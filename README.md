@@ -60,6 +60,7 @@ As a USER, I want to be able to login and out of Bookworm.  WHEN I'm loggedin, I
 * [Tony Linz](https://github.com/alinz07)
 * [Lindsey Dubnicka](https://github.com/lindseymiller2567)
 * [Heather Lessard](https://github.com/Hmlessard/)
+
 add-post.js copied code https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream
 
 cors policy and heroku work around https://stackoverflow.com/questions/43262121/trying-to-use-fetch-and-pass-in-mode-no-cors by sideshowbarker
