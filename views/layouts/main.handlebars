@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <a href="https://www.flaticon.com/free-icons/bookworm" title="bookworm icons">Bookworm icons created by Freepik - Flaticon</a>
+  <a href="https://www.flaticon.com/free-icons/bookworm" title="bookworm icons">Bookworm icons created by Freepik -
+    Flaticon</a>
   <title>Bookworm</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
@@ -18,7 +19,7 @@
       <nav>
         {{#if loggedIn}}
         <a href="/dashboard">dashboard</a>
-        <button>logout</button>
+        <button id="logout">logout</button>
         {{else}}
         <a href="/login">login</a>
         {{/if}}
@@ -31,7 +32,7 @@
       Thanks for visiting!
     </footer>
   </div>
-  
+
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
   {{/if}}
