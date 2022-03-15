@@ -121,7 +121,7 @@ router.post('/', (req, res) => {
         book_title: req.body.book_title,
         book_author: req.body.book_author,
         book_review: req.body.book_review,
-        user_id: req.body.user_id,//will be req.session.user_id, // grabs user id from the session instead of body
+        user_id: req.session.user_id,
         book_id: req.body.book_id //maybe replace all of this with req.body if it works
     })
     .then(dbPostData => {
