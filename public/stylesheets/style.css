@@ -1,10 +1,11 @@
 * {
-    /* box-sizing: border-box; */
-    padding: 20;
+    box-sizing: border-box;
+    padding: 40;
     margin: 20;
   }
 
   body, html {
+    background-image: url("/public/images/wood-bg.jpg");
     background-color: rgb(133, 103, 65);
     height: 100%;
     padding: 0;
@@ -13,6 +14,9 @@
     color: rgb(0, 0, 0);
   }
   
+  .navbar{
+    background-image: url(/public/images/wood-bg.jpg);
+  }
   a {
     text-decoration: none;
     color: rgb(116, 28, 28);
@@ -21,6 +25,12 @@
 
   a:hover {
     color: rgb(116, 28, 28);
+  }
+  
+  p {
+    text-align: center;
+    color: rgb(116, 28, 28);
+    font-size:large;
   }
 
   button .btn {
@@ -36,118 +46,22 @@
   button:hover {
     background-color: rgb(189, 4, 4);
   }
-  
-  /* Nav bar Bootstrap styling */
-  @import 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans';
-  .navbar-brand {
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase
+   
+  ul {
+    list-style-type: none;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    display: block;
+    /* overflow: hidden; */
   }
   
-  .navbar .nav {
-    font-family: 'Open Sans', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 1.2rem
-  }
-  
-  .navbar-inverse {
-    background-color: rgb(116, 28, 28);
-  }
-  
-  .navbar-inverse .navbar-nav>.active>a:hover,
-  .navbar-inverse .navbar-nav>li>a:hover,
-  .navbar-inverse .navbar-nav>li>a:focus {
-    background-color: #002200
-  }
-  
-  .navbar-inverse .navbar-nav>.active>a,
-  .navbar-inverse .navbar-nav>.open>a,
-  .navbar-inverse .navbar-nav>.open>a,
-  .navbar-inverse .navbar-nav>.open>a:hover,
-  .navbar-inverse .navbar-nav>.open>a,
-  .navbar-inverse .navbar-nav>.open>a:hover,
-  .navbar-inverse .navbar-nav>.open>a:focus {
-    background-color: rgb(116, 28, 28);
-  }
-  
-  .dropdown-menu {
-    background-color: #006B00
-  }
-  
-  .dropdown-menu>li>a:hover,
-  .dropdown-menu>li>a:focus {
-    background-color: #002200
-  }
-  
-  .navbar-inverse {
-    background-image: none;
-  }
-  
-  .dropdown-menu>li>a:hover,
-  .dropdown-menu>li>a:focus {
-    background-image: none;
-  }
-  
-  .navbar-inverse {
-    border-color: rgb(116, 28, 28);
-  }
-  
-  .navbar-inverse .navbar-brand {
-    color: #FFFFFF
-  }
-  
-  .navbar-inverse .navbar-brand:hover {
-    color: rgb(0, 0, 0);
-  }
-  
-  .navbar-inverse .navbar-nav>li>a {
-    color: #FFFFFF
-  }
-  
-  .navbar-inverse .navbar-nav>li>a:hover,
-  .navbar-inverse .navbar-nav>li>a:focus {
-    color: rgb(0, 0, 0);
-  }
-  
-  .navbar-inverse .navbar-nav>.active>a,
-  .navbar-inverse .navbar-nav>.open>a,
-  .navbar-inverse .navbar-nav>.open>a:hover,
-  .navbar-inverse .navbar-nav>.open>a:focus {
-    color: rgb(0, 0, 0);
-  }
-  
-  .navbar-inverse .navbar-nav>.active>a:hover,
-  .navbar-inverse .navbar-nav>.active>a:focus {
-    color: rgb(0, 0, 0);
-  }
-  
-  .dropdown-menu>li>a {
-    color: #FFFFFF
-  }
-  
-  .dropdown-menu>li>a:hover,
-  .dropdown-menu>li>a:focus {
-    color: rgb(0, 0, 0);
-  }
-  
-  .navbar-inverse .navbar-nav>.dropdown>a .caret {
-    border-top-color: #FFFFFF
-  }
-  
-  .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
-    border-top-color: #FFFFFF
-  }
-  
-  .navbar-inverse .navbar-nav>.dropdown>a .caret {
-    border-bottom-color: #FFFFFF
-  }
-  
-  .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
-    border-bottom-color: #FFFFFF
-  }
+  /* li {
+    justify-content: center;
+  } */
 
-  /* End Nav bar Bootstrap styling */
+  
+  
   
   textarea, input {
     padding: .5%;

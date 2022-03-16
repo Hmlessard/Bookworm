@@ -4,7 +4,8 @@
 <a href="/createNewPost">Create New Post</a>
 
 <!-- View all user's posts -->
-<section class="container">
+<section class="container-fluid row align-items-center">
+  <div class="col">
   <h2>Your Reviews</h2>
   {{#if posts.length}}
   <ol class="post-list">
@@ -20,11 +21,13 @@
       No reviews to display yet.
     </li>
   </ol>
+  </div>
 </section>
 {{/if}}
 
 <!-- List of user's books they want to read -->
-<section class="container">
+<section class="container-fluid row align-items-center">
+  <div class="col">
   <h2>Books to Read</h2>
   {{#if books.length}}
   <ol>
@@ -40,5 +43,6 @@
       No books to display yet.
     </li>
   </ol>
+  </div>
 </section>
 {{/if}}
