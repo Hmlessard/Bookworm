@@ -3,9 +3,11 @@
 {{> comments post.comments}}
 
 {{#if loggedIn}}
-<form class="comment-form container">
+<form id="comment-form-container" class="comment-form container">
+  <p>Drop a line</p>
   <div>
-    <textarea name="comment-body"></textarea>
+    <textarea class="comment-textarea" name="comment-body"
+      placeholder="start typing to get started in the discussion"></textarea>
   </div>
 
   <div>

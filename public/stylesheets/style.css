@@ -53,7 +53,7 @@
     background-color: white;
     border: 1px solid white;
     border-radius: 10px;
-    margin: 30px 0;
+    margin: 30px auto;
     padding: 10px;
   }
 
@@ -86,6 +86,21 @@
   }
 
   .comment {
-    border-left: 3px solid rgb(116, 28, 28);;
+    border-left: 3px solid rgb(116, 28, 28);
     padding-left: 10px;
+  }
+
+  /* single-post page */
+  #comment-form-container {
+    border-top: 3px solid rgb(116, 28, 28);
+  }
+
+  #comment-form-container p {
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .comment-textarea {
+    width: 700px;
   }
