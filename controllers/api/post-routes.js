@@ -39,7 +39,8 @@ router.get('/', (req, res) => {
 router.get('/newPost/:id', (req, res) => { //will need withauth********
     if (req.params.id==0) {
         res.render('new-post', {
-            existingBook: false
+            existingBook: false,
+            loggedIn: true
         })
     } else {
         Book.findOne({

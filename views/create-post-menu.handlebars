@@ -1,17 +1,20 @@
-<form class="posttype-options">
-    <div>Select a book to post about</div>
-    <a href="/api/posts/newPost/0">Post about a new book</a>
+<form class="posttype-options container-fluid">
+    <div class="row justify-content-around">
+        <div id="book-exists-link"class="col-sm-6 text-center p-1">Select a book to post about</div>
+        <a class="col-sm-6 text-center p-1" href="/api/posts/newPost/0">Select this link to post about a new book</a>
+    </div>
 </form>
 
-<section class="container">
-    <div class="column">
-        <ol>
-        {{#each books}}
-        <li><a href="/api/posts/newPost/{{id}}">{{book_title}} by {{book_author}}</a></li>
-        {{/each}}
-        </ol>
-    </div>
-    <div class="column">
-        image/whatever we choose to put on the right side of the page
+<section class="container-fluid">
+    <div class="row justify-content-around post-menu-row">
+        <div class="col-sm-3 text-center p-1 create-menu-div">
+            <ol id="all-books" style="list-style-type: none;">
+            {{#each books}}
+            <li><a href="/api/posts/newPost/{{id}}">{{book_title}} by {{book_author}}</a></li>
+            {{/each}}
+            </ol>
+        </div>
+        <div class="col-sm-3 p-1 create-menu-pic">
+        </div>
     </div>
 </section>

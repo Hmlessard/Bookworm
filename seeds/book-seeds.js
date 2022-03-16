@@ -35,7 +35,7 @@ const bookData = [
     {
         book_title: 'The Storyteller',
         book_author: 'Jodi Picoult',
-        cover_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500191671l/61663._SY475_.jpg'
+        cover_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1356328634l/15753740.jpg'
     },
 ];
 

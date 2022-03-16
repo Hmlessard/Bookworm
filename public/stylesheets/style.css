@@ -4,185 +4,230 @@
     margin: 20;
   }
 
-  .nav-title {
-    background-color: floralwhite;
-    padding: 10px;
-    font-family: Brush Script MT, Brush Script Std, cursive;
-    color: black;
-    font-weight: lighter;
-    font-size: 1.6em;
-    border: 5px darkslategrey solid;
-    border-radius: 15px;
-  }
+.nav-title {
+  background-color: floralwhite;
+  padding: 10px;
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  color: black;
+  font-weight: lighter;
+  font-size: 1.6em;
+  border: 5px darkslategrey solid;
+  border-radius: 15px;
+}
+.nav {
+  margin-top: 30px;
+}
+.login-link, .welcome {
+  background-color: floralwhite;
+  padding: 5px 10px;
+  border: 3px darkslategrey solid;
+  color: darkred;
+  border-radius: 5px;
+}
+.welcome {
+  font-size: 1.2em;
+}
+.thee {
+  font-style: italic;
+}
+header {
+  margin: 20px;
+}
+body, html {
+  background-image: url("/images/wood-bg.jpg");
+  background-color: rgb(133, 103, 65);
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  color: rgb(0, 0, 0);
+}
+.hero {
+  background-size: cover;
+  margin-top: 20px;
+}
+h2 {
+  color: rgb(116, 28, 28);
+  font: bold;
+}
 
-  .nav {
-    margin-top: 30px;
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: rgb(116, 28, 28);
+  font-weight: bold;
   }
-  .login-link, .welcome {
-    background-color: floralwhite;
-    padding: 5px 10px;
-    border: 3px darkslategrey solid;
-    color: darkred;
-    border-radius: 5px;
-  }
+a:hover {
+  color: rgb(116, 28, 28);
+}
 
-  .welcome {
-    font-size: 1.2em;
-  }
+p {
+  text-align: center;
+  color: rgb(116, 28, 28);
+  font-size:large;
+}
+button .btn {
+  background-color: rgb(116, 28, 28);
+  border: 0;
+  padding: 1%;
+  color: white;
+  font-weight: bold;
+  transition: background-color .1s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: rgb(189, 4, 4);
+}
+#logout {
+  font-size: 1em;
+  line-height: normal;
+  font-weight: bold;
+}
+ 
+ul {
+  list-style-type: none;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  display: block;
+  /* overflow: hidden; */
+}
 
-  .thee {
-    font-style: italic;
-  }
+/* li {
+  justify-content: center;
+} */
 
-  header {
-    margin: 20px;
-  }
 
-  body, html {
-    background-image: url("/images/wood-bg.jpg");
-    background-color: rgb(133, 103, 65);
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-    color: rgb(0, 0, 0);
-  }
 
-  .hero {
-    background-size: cover;
-  }
+textarea, input {
+  padding: .5%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+/* remove bullets from list */
+.post-list {
+  list-style: none;
+}
+/* Post Partials */
+#post-container {
+  background-color: floralwhite;
+  border: 3px solid darkslategrey;
+  border-radius: 10px;
+  margin: 30px auto;
+  padding: 10px;
+}
+#post-headline {
+  font-size: 30px;
+}
+#post-author {
+  font-size: 20px;
+  color: rgb(116, 28, 28);
+}
+#post-user-created {
+  font-style: italic;
+}
+#post-review {
+  border-top: 1px solid black;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+.new-post-form {
+  background-color: floralwhite;
+  text-align: inherit;
+  height: fit-content;
+  width: 500px;
+  border: 3px solid darkslategrey;
+  border-radius: 5px;
+}
+.new-post-form > * {
+  margin: 5px 0;
+}
+.new-post-container {
+  margin-top: 30px;
+}
+.book-cover {
+  width: inherit;
+}
+.posttype-options {
+  background-color: floralwhite;
+  color: darkred;
+  border-top: 3px solid darkslategrey;
+  border-bottom: 3px solid darkslategrey;
+  margin-bottom: 20px;
+}
+#book-exists-link {
+  font-weight: bold;
+  color: black;
+}
+.post-menu-row {
+  height: 600px;
+}
+.create-menu-div {
+  background-color: navajowhite;
+  border: 3px solid darkslategrey;
+  border-radius: 10px;
+  height: fit-content;
+}
+.create-menu-pic {
+  border-radius: 10px;
+  background-image: url("../images/book-on-grass.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#book-review {
+  vertical-align: text-top;
+}
+.create-post {
+  font-size: 1em;
+  line-height: normal;
+  font-weight: bold;
+  background-color: floralwhite;
+  padding: 5px 10px;
+  border: 2px darkslategrey solid;
+  color: darkred;
+  border-radius: 5px;
+}
+.cover-container {
+  display: flex;
+  justify-content: center;
+}
 
-  h2 {
-    color: rgb(116, 28, 28);
-    font: bold;
-  }
-  
-  header nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-  }
-  
-  a {
-    text-decoration: none;
-    color: rgb(116, 28, 28);
-    font-weight: bold;
-    }
-
-  a:hover {
-    color: rgb(116, 28, 28);
-  }
-  
-  p {
-    text-align: center;
-    color: rgb(116, 28, 28);
-    font-size:large;
-  }
-
-  button .btn {
-    background-color: rgb(116, 28, 28);
-    border: 0;
-    padding: 1%;
-    color: white;
-    font-weight: bold;
-    transition: background-color .1s;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  button:hover {
-    background-color: rgb(189, 4, 4);
-  }
-   
-  ul {
-    list-style-type: none;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0;
-    display: block;
-    /* overflow: hidden; */
-  }
-  
-  /* li {
-    justify-content: center;
-  } */
-
-  
-  
-  
-  textarea, input {
-    padding: .5%;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-
-  /* remove bullets from list */
-  .post-list {
-    list-style: none;
-  }
-
-  /* Post Partials */
-  #post-container {
-    background-color: floralwhite;
-    border: 3px solid darkslategrey;
-    border-radius: 10px;
-    margin: 30px auto;
-    padding: 10px;
-  }
-
-  #post-headline {
-    font-size: 30px;
-  }
-
-  #post-author {
-    font-size: 20px;
-    color: rgb(116, 28, 28);
-  }
-
-  #post-user-created {
-    font-style: italic;
-  }
-
-  #post-review {
-    border-top: 1px solid black;
-    padding-top: 10px;
-    margin-top: 10px;
-  }
-
-   /* Comments Partials */
-   .comments {
-    background-color: white;
-    border: 1px solid white;
-    border-radius: 10px;
-    margin: 30px 0;
-    padding: 10px;
-  }
-
-  .comment {
-    border-left: 3px solid rgb(116, 28, 28);
-    padding-left: 10px;
-  }
-
-  /* single-post page */
-  #comment-form-container {
-    border-top: 3px solid rgb(116, 28, 28);
-  }
-
-  #comment-form-container p {
-    color: white;
-    font-size: 20px;
-    margin-top: 20px;
-  }
-
-  .comment-textarea {
-    width: 700px;
-  }
-
-  footer {
-    background-color: floralwhite;
-    width: fit-content;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: 3px solid darkslategrey;
-  }
+ /* Comments Partials */
+ .comments {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: 30px 0;
+  padding: 10px;
+}
+.comment {
+  border-left: 3px solid rgb(116, 28, 28);
+  padding-left: 10px;
+}
+/* single-post page */
+#comment-form-container {
+  border-top: 3px solid rgb(116, 28, 28);
+}
+#comment-form-container p {
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
+}
+.comment-textarea {
+  width: 700px;
+}
+footer {
+  background-color: floralwhite;
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 3px solid darkslategrey;
+  margin-top: 50px;
+}
