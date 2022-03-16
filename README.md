@@ -68,3 +68,6 @@ As a user who loves books and discussions with fellow book-lovers, I want a CMS-
 * add-post.js copied code: (https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream)
 
 * cors policy and heroku work around: (https://stackoverflow.com/questions/43262121/trying-to-use-fetch-and-pass-in-mode-no-cors) by sideshowbarker
+
+* images
+    * https://images.unsplash.com/photo-1550399105-c4db5fb85c18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Ym9va3N8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60 courtesy of Ed Robinson via unsplash.

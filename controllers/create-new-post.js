@@ -6,6 +6,7 @@ const withAuth = require('../utils/auth');
 // gets from /createNewPost
 router.get('/', withAuth, (req, res) => {
     Book.findAll({
+      order: ['book_title'],
       attributes: [
         'book_title',
         'book_author',

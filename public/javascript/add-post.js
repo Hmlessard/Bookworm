@@ -13,7 +13,7 @@ async function newPostFormHandler(event) {
 
   const title = document.querySelector('input[name="book-title"]').value.trim();
   const author = document.querySelector('input[name="book-author"]').value.trim();
-  const review = document.querySelector('input[name="book-review"]').value.trim();
+  const review = document.querySelector('textarea[name="book-review"]').value.trim();
   const id = parseInt(window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ]);
