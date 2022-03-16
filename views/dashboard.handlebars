@@ -23,14 +23,17 @@
 </section>
 {{/if}}
 
+<!-- when clicked, user will be routed to the 'toReadList page' -->
+<a href="/dashboard/toReadList">Add books to your List of Books to Read</a>
+
 <!-- List of user's books they want to read -->
 <section class="container">
   <h2>Books to Read</h2>
   {{#if books.length}}
   <ol>
     {{#each books as |book|}}
-    <li>
-      {{book_title}} by {{book_author}}
+    <li id="{{id}}">
+      {{book_title}} by {{book_author}} <button class="del-btn" value="{{id}}">Del</button>
     </li>
     {{/each}}
   </ol>
@@ -42,3 +45,5 @@
   </ol>
 </section>
 {{/if}}
+
+<script src="/javascript/delete-a-book.js"></script>
