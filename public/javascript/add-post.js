@@ -7,13 +7,67 @@ let spleet = function (string) {
   return spleetString
 }
 
+const getBookIdAndPost = function() {
+  let title = document.querySelector('input[name="book-title"]').value.trim();
+  let author = document.querySelector('input[name="book-author"]').value.trim();
+  let review = document.querySelector('#book-review').value.trim();
+  
+  fetch(`/api/books/${title}`, {
+  method: 'GET',
+})
+  .then(response => {
+    const reader = response.body.getReader();
+
+    return new ReadableStream({
+      start(controller) {
+        function push() {
+          reader.read().then(({ done, value }) => {
+            if (done) {
+              console.log('done', done);
+              controller.close();
+              return;
+            }
+            controller.enqueue(value);
+            console.log(done, value);
+            push();
+          })
+        }
+
+        push();
+      }
+    })
+  })
+  .then(stream => {
+    return new Response(stream, {
+      headers: { "Content-Type": "application/json" }
+    }).json();
+  })
+  .then(result => {
+    fetch('/api/posts', {
+      method: 'POST',
+      body: JSON.stringify({
+        book_title: title,
+        book_author: author,
+        book_review: review,
+        book_id: result.id
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+
+    document.location.replace('/dashboard');
+  });
+};
+
 async function newPostFormHandler(event) {
+  
+  let title = document.querySelector('input[name="book-title"]').value.trim();
+  let author = document.querySelector('input[name="book-author"]').value.trim();
+  let review = document.querySelector('#book-review').value.trim();
 
   event.preventDefault();
 
-  const title = document.querySelector('input[name="book-title"]').value.trim();
-  const author = document.querySelector('input[name="book-author"]').value.trim();
-  const review = document.querySelector('textarea[name="book-review"]').value.trim();
   const id = parseInt(window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ]);
@@ -47,7 +101,7 @@ async function newPostFormHandler(event) {
 
     let apiUrl = `https://lit-oasis-13031.herokuapp.com/https://bookcoverapi.herokuapp.com/getBookCover?bookTitle=${splitTitle}&authorName=${splitAuthor}`;
     fetch(apiUrl)
-      .then(response => {
+      .then(async response => {
         if (response.ok) {
           response.json()
             .then(async data => {
@@ -63,57 +117,28 @@ async function newPostFormHandler(event) {
                 }
               });
               if (response.ok) {
-                fetch(`/api/books/${title}`, {
-                  method: 'GET',
-                })
-                  .then(response => {
-                    const reader = response.body.getReader();
-
-                    return new ReadableStream({
-                      start(controller) {
-                        function push() {
-                          reader.read().then(({ done, value }) => {
-                            if (done) {
-                              console.log('done', done);
-                              controller.close();
-                              return;
-                            }
-                            controller.enqueue(value);
-                            console.log(done, value);
-                            push();
-                          })
-                        }
-
-                        push();
-                      }
-                    })
-                  })
-                  .then(stream => {
-                    return new Response(stream, {
-                      headers: { "Content-Type": "application/json" }
-                    }).json();
-                  })
-                  .then(result => {
-                    fetch('/api/posts', {
-                      method: 'POST',
-                      body: JSON.stringify({
-                        book_title: title,
-                        book_author: author,
-                        book_review: review,
-                        book_id: result.id
-                      }),
-                      headers: {
-                        'Content-Type': 'application/json'
-                      }
-                    });
-
-                    document.location.replace('/dashboard');
-                  });
+                getBookIdAndPost()
+              } else {
+                alert(response.statusText)
               }
             })
-        }
-        else {
-          alert(response.statusText)
+        } else if (!response.ok) {
+            const response = await fetch('/api/books', {
+              method: 'POST',
+              body: JSON.stringify({
+                book_title: title,
+                book_author: author,
+                cover_url: null
+              }),
+              headers: {
+                'Content-Type': 'application/json'
+              }
+          });
+          if (response.ok) {
+            getBookIdAndPost()
+          } else {
+            alert(response.statusText)
+          } 
         }
       })
   };
