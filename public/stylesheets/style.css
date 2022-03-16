@@ -1,16 +1,30 @@
 * {
-    /* box-sizing: border-box; */
-    padding: 20;
+    box-sizing: border-box;
+    padding: 40;
     margin: 20;
   }
 
   body, html {
+    background-image: url("/public/images/wood-bg.jpg");
     background-color: rgb(133, 103, 65);
     height: 100%;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
     color: rgb(0, 0, 0);
+  }
+
+  h2 {
+    color: rgb(116, 28, 28);
+    font: bold;
+  }
+  
+  header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
   }
   
   a {
@@ -21,6 +35,12 @@
 
   a:hover {
     color: rgb(116, 28, 28);
+  }
+  
+  p {
+    text-align: center;
+    color: rgb(116, 28, 28);
+    font-size:large;
   }
 
   button .btn {
@@ -36,6 +56,22 @@
   button:hover {
     background-color: rgb(189, 4, 4);
   }
+   
+  ul {
+    list-style-type: none;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    display: block;
+    /* overflow: hidden; */
+  }
+  
+  /* li {
+    justify-content: center;
+  } */
+
+  
+  
   
   textarea, input {
     padding: .5%;

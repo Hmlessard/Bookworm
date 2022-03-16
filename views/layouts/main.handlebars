@@ -11,27 +11,48 @@
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
+
 <body>
-  <div class="wrapper container">
+  <div class="navbar">
     <header>
       <h1>
         <a href="/">Bookworm</a>
       </h1>
       <nav>
-        {{#if loggedIn}}
-        <a href="/dashboard">dashboard</a>
-        <button id="logout">logout</button>
+        <ul>
+          <li>
+            {{#if loggedIn}}
+            <a href="/dashboard">Dashboard</a>
+          </li>
+        </ul>
+      <ul>
+        <li>
+          <button id="logout btn">Logout</button>
         {{else}}
-        <a href="/login">login</a>
+        </li>
+      </ul> 
+      <ul>
+        <li>
+          <a href="/login">Login</a>
         {{/if}}
+        </li>
+      </ul> 
+        
       </nav>
     </header>
     <main>
       {{{ body }}}
     </main>
     <footer>
-      &copy; 
-      {{!-- links to Github --}}
+      &copy; Bookworm 2022
+       <div class="contributers ">
+                <h3 id="us" class="contributors">Contributors</h3>
+                <ul class="names">
+                    <li><a href="https://github.com/alinz07" target="_blank" class=>Tony Linz</a></li>
+                    <li><a href="https://github.com/Hmlessard" target="_blank" class=>Heather Lessard</a></li>
+                    <li><a href="https://github.com/lindseymiller2567" target="_blank" class=>Lindsey Dubnicka</a></li>
+                </ul>
+            </div>
     </footer>
   </div>
 
