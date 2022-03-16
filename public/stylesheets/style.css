@@ -4,14 +4,52 @@
     margin: 20;
   }
 
+  .nav-title {
+    background-color: floralwhite;
+    padding: 10px;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    color: black;
+    font-weight: lighter;
+    font-size: 1.6em;
+    border: 5px darkslategrey solid;
+    border-radius: 15px;
+  }
+
+  .nav {
+    margin-top: 30px;
+  }
+  .login-link, .welcome {
+    background-color: floralwhite;
+    padding: 5px 10px;
+    border: 3px darkslategrey solid;
+    color: darkred;
+    border-radius: 5px;
+  }
+
+  .welcome {
+    font-size: 1.2em;
+  }
+
+  .thee {
+    font-style: italic;
+  }
+
+  header {
+    margin: 20px;
+  }
+
   body, html {
-    background-image: url("/public/images/wood-bg.jpg");
+    background-image: url("/images/wood-bg.jpg");
     background-color: rgb(133, 103, 65);
     height: 100%;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
     color: rgb(0, 0, 0);
+  }
+
+  .hero {
+    background-size: cover;
   }
 
   h2 {
@@ -86,8 +124,8 @@
 
   /* Post Partials */
   #post-container {
-    background-color: white;
-    border: 1px solid white;
+    background-color: floralwhite;
+    border: 3px solid darkslategrey;
     border-radius: 10px;
     margin: 30px auto;
     padding: 10px;
@@ -139,4 +177,12 @@
 
   .comment-textarea {
     width: 700px;
+  }
+
+  footer {
+    background-color: floralwhite;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 3px solid darkslategrey;
   }

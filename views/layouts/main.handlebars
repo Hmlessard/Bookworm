@@ -16,9 +16,9 @@
   <div class="navbar">
     <header>
       <h1>
-        <a href="/">Bookworm</a>
+        <a href="/" class="nav-title">Welcome to Bookworm!</a>
       </h1>
-      <nav>
+      <nav class="nav">
         <ul>
           <li>
             {{#if loggedIn}}
@@ -27,19 +27,21 @@
         </ul>
       <ul>
         <li>
-          <button id="logout btn">Logout</button>
+          <button id="logout" class="btn">Logout</button>
         {{else}}
         </li>
       </ul> 
       <ul>
         <li>
-          <a href="/login">Login</a>
+          <a href="/login" class="login-link">Login/Signup</a>
         {{/if}}
         </li>
       </ul> 
         
       </nav>
     </header>
+  </div>
+
     <main>
       {{{ body }}}
     </main>
@@ -54,7 +56,6 @@
                 </ul>
             </div>
     </footer>
-  </div>
 
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
