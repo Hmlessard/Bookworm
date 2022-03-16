@@ -1,0 +1,14 @@
+<!-- List of user's books they want to read -->
+<section class="container">
+  <h2>Books to Read</h2>
+  <ol>
+    {{#each booksToRender}}
+    <li id="{{id}}">
+      {{book_title}} by {{book_author}} <button name="book" class="add-book-btn" value="{{id}}">add</button>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+
+<script src="/javascript/add-a-book.js"></script>
+
