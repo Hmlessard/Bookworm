@@ -1,16 +1,16 @@
-<article class="post container">
+<article id="post-container" class="post container">
 
   <div class="title">
 
-    <h1>
+    <h1 id="post-headline">
       <a href="/api/posts/{{id}}">{{book_title}}</a>
     </h1>
 
-    <h3>{{book_author}}</h3>
+    <h3 id="post-author">Author: {{book_author}}</h3>
 
-    <span>{{format_date created_at}}</span>
+    <span id="post-user-created">Posted by Bookwormer: {{user.username}} on {{format_date created_at}}</span>
 
-    <p>{{book_review}}</p>
+    <p id="post-review">{{book_review}}</p>
 
   </div>
 

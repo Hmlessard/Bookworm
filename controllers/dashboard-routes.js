@@ -51,6 +51,7 @@ router.get('/', withAuth, (req, res) => {
         });
 });
 
+
 router.get('/toReadList', (req, res) => {
     Book.findAll({
         attributes: [
