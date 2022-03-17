@@ -1,0 +1,21 @@
+<section>
+
+    <!-- welcome message -->
+  <p class="welcome">Thank you for visiting Bookworm! This is <span class="thee">thee</span> place to be on the Internet if you want to express your love, appreciation
+    or excitement for all of your favorite books and authors! </br> 
+    Scroll to view our community's posts or signup to get started in the discussions; your fellow bookworms are waiting!</p>
+
+  <!-- hero image -->
+  <img src="/images/hero-4.0.jpg" alt="row of books" width="100%" class="hero">
+
+</section>
+
+<!-- Display all posts -->
+<ol class="post-list">
+  {{#each posts as |post|}}
+  <li>
+    <!-- see partials/posts.handlebars -->
+    {{> post-info post }}
+  </li>
+  {{/each}}
+</ol>

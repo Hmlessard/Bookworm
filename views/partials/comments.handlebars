@@ -1,0 +1,13 @@
+<!-- iterate over the comments array to show all comments for a post -->
+{{#each this}}
+<div class="comments">
+    <section class="comment">
+        <div>
+            Comment by: {{user.username}} on {{format_date created_at}}
+        </div>
+        <div class="text">
+            {{comment_text}}
+        </div>
+    </section>
+</div>
+{{/each}}
