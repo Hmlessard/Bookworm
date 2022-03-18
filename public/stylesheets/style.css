@@ -201,8 +201,8 @@ textarea, input {
 
  /* Comments Partials */
  .comments {
-  background-color: white;
-  border: 1px solid white;
+  background-color: floralwhite;
+  border: 1px solid floralwhite;
   border-radius: 10px;
   margin: 30px 0;
   padding: 10px;
@@ -219,6 +219,7 @@ textarea, input {
   color: white;
   font-size: 20px;
   margin-top: 20px;
+  text-align: left;
 }
 .comment-textarea {
   width: 700px;
