@@ -56,10 +56,17 @@ As a user who loves books and discussions with fellow book-lovers, I want a CMS-
 * Sequelize
 * Nodemon
 
-## Maintainers
+## Contributors
 ---------------
 
 * [Tony Linz](https://github.com/alinz07)
+    * Controllers
+    * Front-End Javascript
+    * CSS
+    * Heroku
+    * Config
+    * Utils
+    * Views
 * [Lindsey Dubnicka](https://github.com/lindseymiller2567)
 * [Heather Lessard](https://github.com/Hmlessard/)
 
