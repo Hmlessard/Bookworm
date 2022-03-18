@@ -23,7 +23,7 @@
   display: flex;
   justify-content: center;
 }
-.login-link, .welcome {
+.login-link, .welcome, #comment-btn {
   background-color: floralwhite;
   padding: 5px 10px;
   border: 3px darkslategrey solid;
@@ -92,7 +92,7 @@ button .btn {
 button:hover {
   background-color: rgb(189, 4, 4);
 }
-#logout {
+#logout, #comment-btn {
   font-size: 1em;
   line-height: normal;
   font-weight: bold;
@@ -177,13 +177,14 @@ textarea, input {
 }
 .book-cover {
   width: inherit;
+  border: 3px solid darkslategrey;
 }
 .posttype-options {
   background-color: floralwhite;
   color: darkred;
   border-top: 3px solid darkslategrey;
   border-bottom: 3px solid darkslategrey;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 #book-exists-link {
   font-weight: bold;
@@ -273,21 +274,31 @@ textarea, input {
   background-color: white;
   border: 1px solid white;
   border-radius: 10px;
-  margin: 30px 0;
+  margin: 30px auto;
   padding: 10px;
+  width: fit-content;
 }
 .comment {
   border-left: 3px solid rgb(116, 28, 28);
   padding-left: 10px;
 }
 /* single-post page */
+.comment-form > * {
+  text-align: center;
+}
 #comment-form-container {
-  border-top: 3px solid rgb(116, 28, 28);
+  border-top: 7px solid darkslategrey;
 }
 #comment-form-container p {
-  color: white;
+  color: darkred;
   font-size: 20px;
-  margin-top: 20px;
+  margin: 40px auto 10px;
+  width: fit-content;
+  padding: 10px;
+  background-color: navajowhite;
+  border-radius: 5px;
+  font-weight: bold;
+  border: 3px solid darkslategrey;
 }
 .comment-textarea {
   width: 700px;
