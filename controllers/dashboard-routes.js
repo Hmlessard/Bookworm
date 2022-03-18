@@ -32,19 +32,27 @@ router.get('/', withAuth, (req, res) => {
             }
         ]
     })
-    .then(async dbPostData => {
-        const posts = dbPostData.map(post => post.get({ plain: true }));
-        //console.log(posts)
-        const bookArray = []
-        const booksToInclude =
+        .then(async dbPostData => {
+            const posts = dbPostData.map(post => post.get({ plain: true }));
+            //console.log(posts)
+            const bookArray = []
             BookUser.findAll({
                 where: {
                     user_id: req.session.user_id
                 },
             }).then(dbBookuserData => {
-                    const plainBookusers = dbBookuserData.map(bookuser => bookuser.get({ plain: true }));
-                    const listLength = plainBookusers.length;
-                    let bookNumber = 0
+                console.log(dbBookuserData)
+                const plainBookusers = dbBookuserData.map(bookuser => bookuser.get({ plain: true }));
+                console.log(plainBookusers)
+                const listLength = plainBookusers.length;
+                let bookNumber = 0
+                if (listLength == 0) {
+                    res.render('dashboard', {
+                        posts,
+                        bookArray,
+                        loggedIn: true
+                    });
+                } else {
                     plainBookusers.forEach(bookuser => {
                         let bookId = bookuser.book_id;
                         Book.findOne({
@@ -52,9 +60,9 @@ router.get('/', withAuth, (req, res) => {
                                 id: bookId
                             }
                         }).then(oneBookData => {
-                            bookNumber=bookNumber +1;
                             const plainBook = oneBookData.get({ plain: true });
                             bookArray.push(plainBook)
+                            bookNumber = bookNumber + 1;
                             if (bookNumber == listLength) {
                                 console.log(bookArray)
                                 res.render('dashboard', {
@@ -65,8 +73,9 @@ router.get('/', withAuth, (req, res) => {
                             }
                         })
                     })
+                }
             })
-    })
+        })
 });
 
 
@@ -85,15 +94,15 @@ router.get('/toReadList', (req, res) => {
             }
         ]
     })
-    .then(dbBookData => {
-        const books = dbBookData.map(book => book.get({ plain: true }));
-        const booksToRender = isNotOnList(books, req.session.user_id)
-        res.render('books-to-read', {booksToRender, loggedIn:true});
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then(dbBookData => {
+            const books = dbBookData.map(book => book.get({ plain: true }));
+            const booksToRender = isNotOnList(books, req.session.user_id)
+            res.render('books-to-read', { booksToRender, loggedIn: true });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 module.exports = router;
