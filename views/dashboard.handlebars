@@ -33,9 +33,9 @@
   <section class="container-fluid row align-items-center dash-books-to-read-sec">
     <div class="col">
     <h3 class="dash-books-to-read-h">Books to Read</h3>
-    {{#if books.length}}
+    {{#if bookArray.length}}
     <ol id="dash-book-list">
-      {{#each books as |book|}}
+      {{#each bookArray as |book|}}
       <li id="{{id}}" class="dash-books-list-item">
         {{book_title}} by {{book_author}} <button class="del-btn" value="{{id}}">-</button>
       </li>
