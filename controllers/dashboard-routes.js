@@ -32,23 +32,41 @@ router.get('/', withAuth, (req, res) => {
             }
         ]
     })
-        .then(dbPostData => {
-            const posts = dbPostData.map(post => post.get({ plain: true }));
-            console.log(posts)
-
-            const books = checkForBooks(posts)
-            console.log(books)
-
-            res.render('dashboard', {
-                posts,
-                books,
-                loggedIn: true
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    .then(async dbPostData => {
+        const posts = dbPostData.map(post => post.get({ plain: true }));
+        //console.log(posts)
+        const bookArray = []
+        const booksToInclude =
+            BookUser.findAll({
+                where: {
+                    user_id: req.session.user_id
+                },
+            }).then(dbBookuserData => {
+                    const plainBookusers = dbBookuserData.map(bookuser => bookuser.get({ plain: true }));
+                    const listLength = plainBookusers.length;
+                    let bookNumber = 0
+                    plainBookusers.forEach(bookuser => {
+                        let bookId = bookuser.book_id;
+                        Book.findOne({
+                            where: {
+                                id: bookId
+                            }
+                        }).then(oneBookData => {
+                            bookNumber=bookNumber +1;
+                            const plainBook = oneBookData.get({ plain: true });
+                            bookArray.push(plainBook)
+                            if (bookNumber == listLength) {
+                                console.log(bookArray)
+                                res.render('dashboard', {
+                                    posts,
+                                    bookArray,
+                                    loggedIn: true
+                                });
+                            }
+                        })
+                    })
+            })
+    })
 });
 
 
