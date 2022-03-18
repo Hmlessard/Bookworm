@@ -1,10 +1,10 @@
 <!-- List of user's books they want to read -->
-<section class="container">
+<section class="container all-books-to-read">
   <h2>Books to Read</h2>
-  <ol>
+  <ol style="list-style-type: none;">
     {{#each booksToRender}}
-    <li id="{{id}}">
-      {{book_title}} by {{book_author}} <button name="book" class="add-book-btn" value="{{id}}">add</button>
+    <li id="{{id}}" class="books-to-read-li">
+      {{book_title}} by {{book_author}} <button name="book" class="add-book-btn" value="{{id}}">+</button>
     </li>
     {{/each}}
   </ol>

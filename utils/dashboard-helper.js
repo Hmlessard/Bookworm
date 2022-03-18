@@ -9,3 +9,7 @@ const checkForBooks = (posts => {
 });
 
 module.exports = checkForBooks;
+
+//had to chanage this because if the user doesn't have any posts,
+//then you can't get any book information. We could delete this
+//file.

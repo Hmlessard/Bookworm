@@ -26,28 +26,30 @@
 {{/if}}
 
 <!-- when clicked, user will be routed to the 'toReadList page' -->
-<a href="/dashboard/toReadList">Add books to your List of Books to Read</a>
+<div class="dash-books-to-read-div">
+  <a href="/dashboard/toReadList">Click here to add books to your List of Books to Read</a>
 
-<!-- List of user's books they want to read -->
-<section class="container-fluid row align-items-center">
-  <div class="col">
-  <h3>Books to Read</h3>
-  {{#if books.length}}
-  <ol>
-    {{#each books as |book|}}
-    <li id="{{id}}">
-      {{book_title}} by {{book_author}} <button class="del-btn" value="{{id}}">Del</button>
-    </li>
-    {{/each}}
-  </ol>
-  {{else}}
-  <ol>
-    <li>
-      No books to display yet.
-    </li>
-  </ol>
-  </div>
-</section>
-{{/if}}
+  <!-- List of user's books they want to read -->
+  <section class="container-fluid row align-items-center dash-books-to-read-sec">
+    <div class="col">
+    <h3 class="dash-books-to-read-h">Books to Read</h3>
+    {{#if bookArray.length}}
+    <ol id="dash-book-list">
+      {{#each bookArray as |book|}}
+      <li id="{{id}}" class="dash-books-list-item">
+        {{book_title}} by {{book_author}} <button class="del-btn" value="{{id}}">-</button>
+      </li>
+      {{/each}}
+    </ol>
+    {{else}}
+    <ol>
+      <li>
+        No books to display yet.
+      </li>
+    </ol>
+    </div>
+  </section>
+  {{/if}}
+</div>
 
 <script src="/javascript/delete-a-book.js"></script>
