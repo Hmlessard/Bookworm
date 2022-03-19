@@ -1,7 +1,12 @@
+<h2 id="page-title" class="col-sm-3">Create New Post</h2>
+
 <form class="posttype-options container-fluid">
     <div class="row justify-content-around">
-        <div id="book-exists-link"class="col-sm-6 text-center p-1">Select a book to post about</div>
-        <a class="col-sm-6 text-center p-1" href="/api/posts/newPost/0">Select this link to post about a new book</a>
+        <div id="book-exists-link" class="col-sm-3 text-center p-1">
+            Create post from book list below
+        </div>
+
+        <a class="col-sm-3 text-center p-1" href="/api/posts/newPost/0">Create post from new book</a>
     </div>
 </form>
 
@@ -9,9 +14,9 @@
     <div class="row justify-content-around post-menu-row">
         <div class="col-sm-3 text-center p-1 create-menu-div">
             <ol id="all-books" style="list-style-type: none;">
-            {{#each books}}
-            <li><a href="/api/posts/newPost/{{id}}">{{book_title}} by {{book_author}}</a></li>
-            {{/each}}
+                {{#each books}}
+                <li><a href="/api/posts/newPost/{{id}}">{{book_title}} by {{book_author}}</a></li>
+                {{/each}}
             </ol>
         </div>
         <div class="col-sm-3 p-1 create-menu-pic">
