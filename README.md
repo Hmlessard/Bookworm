@@ -68,3 +68,4 @@ As a user who loves books and discussions with fellow book-lovers, I want a CMS-
 
 * images
     * https://images.unsplash.com/photo-1550399105-c4db5fb85c18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Ym9va3N8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60 courtesy of Ed Robinson via unsplash.
+    * https://unsplash.com/photos/bhBONc07WsI courtesy of Annelies Geneyn
