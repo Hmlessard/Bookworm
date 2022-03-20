@@ -3,7 +3,7 @@
 <!-- View all user's posts -->
 <section class="container-fluid row align-items-center">
   <div class="col">
-    {{!-- <h3>Your Reviews</h3> --}}
+    {{!-- <h3 id="dash-review-title">Your Reviews</h3> --}}
     {{#if posts.length}}
     <ol class="post-list">
       {{#each posts as |post|}}
@@ -13,27 +13,24 @@
       {{/each}}
     </ol>
     {{else}}
-    <ol>
+    <ol id="no-reviews">
       <li>
         No reviews to display yet.
       </li>
     </ol>
+    {{/if}}
   </div>
 </section>
-{{/if}}
 
 <!-- when clicked, user will be routed to the 'create new post page' -->
 <div class="center-btn">
-  <button class="dash-new-post-btn">
+  <button class="dash-create-new-btn">
     <a href="/createNewPost">Create New Post</a>
   </button>
 </div>
 
-<!-- when clicked, user will be routed to the 'toReadList page' -->
+<!-- List of user's books they want to read -->
 <div class="dash-books-to-read-div">
-  <a href="/dashboard/toReadList">Add books to your Must Read List</a>
-
-  <!-- List of user's books they want to read -->
   <section class="container-fluid row align-items-center dash-books-to-read-sec">
     <div class="col">
       <h3 class="dash-books-to-read-h">Books to Read</h3>
@@ -46,14 +43,21 @@
         {{/each}}
       </ol>
       {{else}}
-      <ol>
+      <ol id="no-books">
         <li>
           No books to display yet.
         </li>
       </ol>
+      {{/if}}
     </div>
   </section>
-  {{/if}}
+</div>
+
+<!-- when clicked, user will be routed to the 'toReadList page' -->
+<div class="center-btn">
+  <button class="dash-create-new-btn">
+    <a href="/dashboard/toReadList">Add Books</a>
+  </button>
 </div>
 
 <script src="/javascript/delete-a-book.js"></script>

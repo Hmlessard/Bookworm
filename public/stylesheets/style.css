@@ -23,7 +23,7 @@
   display: flex;
   justify-content: center;
 }
-.login-link, .welcome, #comment-btn, .dash-new-post-btn {
+.login-link, .welcome, #comment-btn, .dash-create-new-btn, .login-btn, .signup-btn {
   background-color: floralwhite;
   padding: 5px 10px;
   border: 3px darkslategrey solid;
@@ -79,21 +79,11 @@ p {
   color: rgb(116, 28, 28);
   font-size:large;
 }
-button .btn {
-  background-color: rgb(116, 28, 28);
-  border: 0;
-  padding: 1%;
-  color: white;
-  font-weight: bold;
-  transition: background-color .1s;
-  cursor: pointer;
-  border-radius: 5px;
-}
 button:hover {
   color: floralwhite;
   background-color: darkslategrey;
 }
-#logout, #comment-btn {
+#logout, #comment-btn, .login-btn, .signup-btn {
   font-size: 1em;
   line-height: normal;
   font-weight: bold;
@@ -140,6 +130,11 @@ textarea, input {
   background-color: floralwhite;
   padding: 10px;
   text-align: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom: 3px solid darkslategrey;
+  border-top: 3px solid darkslategrey;
+  border-right: 3px solid darkslategrey;
 }
 
 /* Post Partials */
@@ -206,7 +201,7 @@ textarea, input {
   font-weight: bold;
   width: fit-content;
 }
-.all-books-to-read > h2, .dash-books-to-read-h {
+.all-books-to-read > h2, .dash-books-to-read-h, #dash-review-title {
   border-bottom: 3px darkred solid;
   padding: 10px 150px;
   width: fit-content;
@@ -218,11 +213,14 @@ textarea, input {
 
 /* dashboard */
 .center-btn {
+  width: 200px;
   margin: auto;
 }
-.dash-new-post-btn {
+.dash-create-new-btn {
   font-size: 20px;
   padding: 10px;
+  width: 200px;
+  margin: auto;
 }
 .dash-books-to-read-sec {
   width: fit-content;
@@ -251,11 +249,14 @@ textarea, input {
   width: fit-content;
   text-align: center;
   padding: 15px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
-.dash-books-to-read-div > a {
-  color: black;
+#dash-review-title {
+  color: darkred;
+  font-weight: bold;
+  margin-top: 20px;
 }
-
 .create-menu-div, .all-books-to-read, .dash-books-to-read-div {
   background-color: floralwhite;
   border: 3px solid darkslategrey;
@@ -268,12 +269,20 @@ textarea, input {
   background-size: contain;
   background-repeat: no-repeat;
 }
+#no-books, #no-reviews {
+  list-style: none;
+  font-style: italic;
+}
+#no-reviews {
+  background-color: floralwhite;
+  border: 3px solid darkslategrey;
+  border-radius: 10px;
+  height: fit-content;
+  text-align: center;
+  height: 100px;
+}
 
 /* Create New Post page */
-#all-books {
-  padding: 0;
-  margin: 0;
-}
 #book-review {
   vertical-align: text-top;
 }
@@ -287,9 +296,9 @@ textarea, input {
   color: darkred;
   border-radius: 5px;
 }
-.cover-container {
-  display: flex;
-  justify-content: center;
+.create-post:hover {
+  color: floralwhite;
+  background-color: darkslategrey;
 }
 
  /* Comments Partials */
@@ -326,6 +335,23 @@ textarea, input {
 }
 .comment-textarea {
   width: 700px;
+}
+
+/* login/sign-up page */
+.login-form, .signup-form {
+  background-color: floralwhite;
+  text-align: inherit;
+  height: fit-content;
+  width: 500px;
+  border: 3px solid darkslategrey;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  line-height: 200%;
+}
+
+.signup-btn, .login-btn {
+  margin: 20px;
 }
 
 /* footer */

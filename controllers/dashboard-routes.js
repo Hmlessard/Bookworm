@@ -41,9 +41,9 @@ router.get('/', withAuth, (req, res) => {
                     user_id: req.session.user_id
                 },
             }).then(dbBookuserData => {
-                console.log(dbBookuserData)
+                // console.log(dbBookuserData)
                 const plainBookusers = dbBookuserData.map(bookuser => bookuser.get({ plain: true }));
-                console.log(plainBookusers)
+                // console.log(plainBookusers)
                 const listLength = plainBookusers.length;
                 let bookNumber = 0
                 if (listLength == 0) {
@@ -64,7 +64,7 @@ router.get('/', withAuth, (req, res) => {
                             bookArray.push(plainBook)
                             bookNumber = bookNumber + 1;
                             if (bookNumber == listLength) {
-                                console.log(bookArray)
+                                //console.log(bookArray)
                                 res.render('dashboard', {
                                     posts,
                                     bookArray,
