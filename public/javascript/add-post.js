@@ -99,7 +99,7 @@ async function newPostFormHandler(event) {
     let splitAuthor = spleet(author);
     //console.log(splitTitle, splitAuthor);
 
-    let apiUrl = `https://bookcoverapi.herokuapp.com/getBookCover?bookTitle=${splitTitle}&authorName=${splitAuthor}`;
+    let apiUrl = `https://lit-oasis-13031.herokuapp.com/https://bookcoverapi.herokuapp.com/getBookCover?bookTitle=${splitTitle}&authorName=${splitAuthor}`;
     fetch(apiUrl)
       .then(async response => {
         if (response.ok) {
