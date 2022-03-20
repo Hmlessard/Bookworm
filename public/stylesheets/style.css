@@ -23,7 +23,7 @@
   display: flex;
   justify-content: center;
 }
-.login-link, .welcome, #comment-btn {
+.login-link, .welcome, #comment-btn, .dash-create-new-btn, .login-btn, .signup-btn {
   background-color: floralwhite;
   padding: 5px 10px;
   border: 3px darkslategrey solid;
@@ -71,33 +71,23 @@ a {
   font-weight: bold;
   }
 a:hover {
-  color: rgb(116, 28, 28);
+  color: floralwhite;
+  background-color: darkslategrey;
 }
-
 p {
   text-align: center;
   color: rgb(116, 28, 28);
   font-size:large;
 }
-button .btn {
-  background-color: rgb(116, 28, 28);
-  border: 0;
-  padding: 1%;
-  color: white;
-  font-weight: bold;
-  transition: background-color .1s;
-  cursor: pointer;
-  border-radius: 5px;
-}
 button:hover {
-  background-color: rgb(189, 4, 4);
+  color: floralwhite;
+  background-color: darkslategrey;
 }
-#logout, #comment-btn {
+#logout, #comment-btn, .login-btn, .signup-btn {
   font-size: 1em;
   line-height: normal;
   font-weight: bold;
 }
- 
 ul {
   list-style-type: none;
   justify-content: space-between;
@@ -106,10 +96,6 @@ ul {
   display: block;
   /* overflow: hidden; */
 }
-
-/* li {
-  justify-content: center;
-} */
 .del-btn {
   width: 30px;
   color: red;
@@ -119,7 +105,6 @@ ul {
   font-size: 20px;
   margin-left: 10px;
 }
-
 .add-book-btn {
   color: green;
   font-weight: bolder;
@@ -128,7 +113,6 @@ ul {
   padding: 0 6px;
   margin-left: 10px;
 }
-
 textarea, input {
   padding: .5%;
   border-radius: 5px;
@@ -138,6 +122,21 @@ textarea, input {
 .post-list {
   list-style: none;
 }
+
+/* Page titles */
+#page-title {
+  font-size: 40px;
+  font-weight: bold;
+  background-color: floralwhite;
+  padding: 10px;
+  text-align: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom: 3px solid darkslategrey;
+  border-top: 3px solid darkslategrey;
+  border-right: 3px solid darkslategrey;
+}
+
 /* Post Partials */
 #post-container {
   background-color: floralwhite;
@@ -179,12 +178,15 @@ textarea, input {
   width: inherit;
   border: 3px solid darkslategrey;
 }
+
+/* Create New Post - exist or new */
 .posttype-options {
   background-color: floralwhite;
   color: darkred;
   border-top: 3px solid darkslategrey;
   border-bottom: 3px solid darkslategrey;
   margin-bottom: 50px;
+  padding: 10px;
 }
 #book-exists-link {
   font-weight: bold;
@@ -199,7 +201,7 @@ textarea, input {
   font-weight: bold;
   width: fit-content;
 }
-.all-books-to-read > h2, .dash-books-to-read-h {
+.all-books-to-read > h2, .dash-books-to-read-h, #dash-review-title {
   border-bottom: 3px darkred solid;
   padding: 10px 150px;
   width: fit-content;
@@ -207,6 +209,18 @@ textarea, input {
 }
 .all-books-to-read > ol {
   padding-top: 10px;
+}
+
+/* dashboard */
+.center-btn {
+  width: 200px;
+  margin: auto;
+}
+.dash-create-new-btn {
+  font-size: 20px;
+  padding: 10px;
+  width: 200px;
+  margin: auto;
 }
 .dash-books-to-read-sec {
   width: fit-content;
@@ -235,12 +249,16 @@ textarea, input {
   width: fit-content;
   text-align: center;
   padding: 15px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
-.dash-books-to-read-div > a {
-  color: black;
+#dash-review-title {
+  color: darkred;
+  font-weight: bold;
+  margin-top: 20px;
 }
 .create-menu-div, .all-books-to-read, .dash-books-to-read-div {
-  background-color: navajowhite;
+  background-color: floralwhite;
   border: 3px solid darkslategrey;
   border-radius: 10px;
   height: fit-content;
@@ -251,6 +269,20 @@ textarea, input {
   background-size: contain;
   background-repeat: no-repeat;
 }
+#no-books, #no-reviews {
+  list-style: none;
+  font-style: italic;
+}
+#no-reviews {
+  background-color: floralwhite;
+  border: 3px solid darkslategrey;
+  border-radius: 10px;
+  height: fit-content;
+  text-align: center;
+  height: 100px;
+}
+
+/* Create New Post page */
 #book-review {
   vertical-align: text-top;
 }
@@ -264,15 +296,15 @@ textarea, input {
   color: darkred;
   border-radius: 5px;
 }
-.cover-container {
-  display: flex;
-  justify-content: center;
+.create-post:hover {
+  color: floralwhite;
+  background-color: darkslategrey;
 }
 
  /* Comments Partials */
  .comments {
-  background-color: white;
-  border: 1px solid white;
+  background-color: floralwhite;
+  border: 1px solid floralwhite;
   border-radius: 10px;
   margin: 30px auto;
   padding: 10px;
@@ -282,6 +314,7 @@ textarea, input {
   border-left: 3px solid rgb(116, 28, 28);
   padding-left: 10px;
 }
+
 /* single-post page */
 .comment-form > * {
   text-align: center;
@@ -303,6 +336,25 @@ textarea, input {
 .comment-textarea {
   width: 700px;
 }
+
+/* login/sign-up page */
+.login-form, .signup-form {
+  background-color: floralwhite;
+  text-align: inherit;
+  height: fit-content;
+  width: 500px;
+  border: 3px solid darkslategrey;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  line-height: 200%;
+}
+
+.signup-btn, .login-btn {
+  margin: 20px;
+}
+
+/* footer */
 footer {
   background-color: floralwhite;
   width: fit-content;

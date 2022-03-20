@@ -1,14 +1,13 @@
 # Bookworm
 
 ## Table of Contents
---------------------
-
 * Introduction
 * User Story
 * Live Link & Screenshots
 * Technologies Used
 * Contact Info/Maintainers
 * Resources
+
 
 ## Introduction
 ---------------
@@ -17,29 +16,26 @@ Users can created new posts (or reviews) of a book and also read and comment on 
 Each user has a dashboard that shows all their reviews they have posted as well as the ability to keep a list of books they would like to read.
 
 
-
 ## User Story
 -------------
-
 As a user who loves books and discussions with fellow book-lovers, I want a CMS-style blog site where I can post reviews of books I’ve read and also take part in discussions with other users by allowing comments on posts.
-
 
 
 ## Live Link & Screenshots
 --------------------------
-
-**View the application here:** [Bookworm] <deployed link here> "Bookworm")
-
+**View the application here:** <https://asgardians-bookworm.herokuapp.com> <br/>
 **View website screenshots here:**
 
-![Bookworm-main-page](/public/images/Main-page.png "Main Page")
-![Bookworm-dashboard](/public/images/Dashboard.png "Dashboard Page")
-![Bookworm-create-post-page](/public/images/Create-post.png "Create Post Page")
+![Bookworm-main-page](/public/images/home1.png "Main Page")
+![Bookworm-main-page](/public/images/home2.png "Main Page")
+![Bookworm-dashboard](/public/images/sign-in.png "Sign-in Page")
+![Bookworm-create-post-page](/public/images/create-post1.png "Create Post Page")
+![Bookworm-create-post-page](/public/images/create-post2.png "Create Post Page")
+![Bookworm-create-post-page](/public/images/single-post.png "Single Post Page")
 
 
 ## Technologies Used
 --------------------
-
 * HTML
 * CSS
 * JavaScript
@@ -56,19 +52,13 @@ As a user who loves books and discussions with fellow book-lovers, I want a CMS-
 * Sequelize
 * Nodemon
 
+
 ## Contributors
 ---------------
-
 * [Tony Linz](https://github.com/alinz07)
-    * Controllers
-    * Front-End Javascript
-    * CSS
-    * Heroku
-    * Config
-    * Utils
-    * Views
 * [Lindsey Dubnicka](https://github.com/lindseymiller2567)
 * [Heather Lessard](https://github.com/Hmlessard/)
+
 
 ## Resources
 ---------------
